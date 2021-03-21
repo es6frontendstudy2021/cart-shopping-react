@@ -22,7 +22,7 @@ export type CartItemType = {
 };
 
 const getProducts = async (): Promise<CartItemType[]> =>
-  await (await fetch('https://fakestoreapi.com/products')).json();
+  await (await fetch('https://fakestoreapi.herokuapp.com/products')).json();
 
 const App = () => {
   const [cartOpen, setCartOpen] = useState(false);
