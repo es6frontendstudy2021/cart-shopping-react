@@ -1,10 +1,19 @@
-import { Button } from './styles/Button'
+// import { Button } from './styles/Button'
+import { Route } from 'react-router-dom'
+import ButtonGroup from './containers/Button'
+import GlobalStyles from './components/GlobalStyles'
+import Buttons from './pages/ButtonPage'
+import ModalPage from './pages/ModalPage'
+
 
 function App() {
   return (
     <div className="App">
-      <h2>antd-clone</h2>
-      {/* <Button primary>Default</Button> */}
+      <GlobalStyles></GlobalStyles>
+      <Route exact path="/" component={Buttons} />
+      <Route exact path="/button" component={Buttons} />
+      <Route exact path="/modal" component={ModalPage} />
+      {/* <ButtonGroup></ButtonGroup> */}
     </div>
   );
 }
