@@ -1,11 +1,7 @@
 .App {
-  text-align: center;
+  display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -35,4 +31,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.left-nav{
+  display: block;
+  width:250px;
+}
+.app-container{
+  display: flex;
+  flex-grow: 1;
 }
