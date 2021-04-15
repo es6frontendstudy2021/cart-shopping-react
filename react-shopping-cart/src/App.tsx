@@ -12,6 +12,7 @@ import Badge from '@material-ui/core/Badge';
 import { useObserver } from 'mobx-react'
 // import {toJS} from 'mobx'
 import {productStore} from './stores/ProductStore'
+import Button from "./button";
 
 // Styles
 import { Wrapper, StyledButton } from './App.styles';
@@ -28,7 +29,8 @@ export type CartItemType = {
 
 // const getProducts = async (): Promise<CartItemType[]> =>
 //   await (await fetch('https://fakestoreapi.herokuapp.com/products')).json();
-
+const SmartComponent = (config:any) =>
+  <Button config={config} foo="bar" />;
 
 const App = () => {
   const [cartOpen, setCartOpen] = useState(false);
@@ -85,7 +87,7 @@ const App = () => {
   return useObserver(() => {
     const isLoading = productStore.isLoading
     const error = productStore.error
-    if (error) return <div>Something went wrong ...</div>;
+    if (error) return <div><SmartComponent></SmartComponent>Something went wrong ...</div>;
     if (isLoading) return <LinearProgress />;
     return (
       <Wrapper>
