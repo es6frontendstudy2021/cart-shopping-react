@@ -1,27 +1,28 @@
 // import { Button } from './styles/Button'
-import { Route, NavLink } from 'react-router-dom'
-import ButtonGroup from './containers/Button'
-import GlobalStyles from './components/GlobalStyles'
-import Buttons from './pages/ButtonPage'
-import ModalPage from './pages/ModalPage'
-import styled from 'styled-components'
-import './App.css'
+import { Route, NavLink } from "react-router-dom";
+import ButtonGroup from "./containers/Button";
+import GlobalStyles from "./components/GlobalStyles";
+import Buttons from "./pages/ButtonPage";
+import ModalPage from "./pages/ModalPage";
+import infinityPage from "./pages/infinityPage";
+import styled from "styled-components";
+import "./App.css";
 
 const CustomNav = styled.ul`
   overflow: hidden;
   > li {
-    float:left;
+    float: left;
     a {
-      display:block;
+      display: block;
       padding: 6px 10px;
-      font-size:18px;
+      font-size: 18px;
     }
   }
-  .active-item{
+  .active-item {
     background-color: #ff6000;
     color: #fff;
   }
-`
+`;
 
 function App() {
   return (
@@ -29,21 +30,27 @@ function App() {
       <GlobalStyles></GlobalStyles>
       <CustomNav className="left-nav">
         <li>
-        <NavLink to="/button" activeClassName="active-item">
-          Button
-        </NavLink>
+          <NavLink to="/button" activeClassName="active-item">
+            Button
+          </NavLink>
         </li>
         <li>
-        <NavLink to="/modal"activeClassName="active-item">
-          Modal
-        </NavLink>
+          <NavLink to="/modal" activeClassName="active-item">
+            Modal
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/infinity" activeClassName="active-item">
+            Infinify
+          </NavLink>
         </li>
       </CustomNav>
-      
+
       <div className="app-container">
         <Route exact path="/" component={Buttons} />
         <Route exact path="/button" component={Buttons} />
         <Route exact path="/modal" component={ModalPage} />
+        <Route exact path="/infinity" component={infinityPage} />
         {/* <ButtonGroup></ButtonGroup> */}
       </div>
     </div>
